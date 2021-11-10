@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
-import { Toolbar } from '../components/toolbar';
+import styles from '/styles/Contact.module.css';
+import { Toolbar } from '/components/toolbar';
 import imageUrlBuilder from '@sanity/image-url';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
@@ -38,8 +38,8 @@ export default function Contact({ contacts }) {
           <h3>Recent posts: </h3>
   
           <div className={styles.feed}>
-            {mappedContacts.length ? mappedContacts.map((p, index2) => (
-              <div onClick={() => router.push(`/contact/${p.slug.current}`)} key={index2} className={styles.contact}>
+            {mappedContacts.length ? mappedContacts.map((p, index) => (
+              <div onClick={() => router.push(`/contact/${p.slug.current}`)} key={index} className={styles.contact}>
                 <h3>{p.title}</h3>
                 <img className={styles.mainImage} src={p.mainImage}/>
               </div>

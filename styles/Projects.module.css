@@ -1,0 +1,27 @@
+.main h1, .main h3 {
+    text-align: center;
+  }
+  .feed {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .post {
+    margin: 25px;
+    width: 500px;
+    height: 316px;
+    cursor: pointer;
+    text-align: center;
+    max-width: calc(100vw - 50px);
+  }
+  .mainImage {
+    width: 500px;
+    transition: 0.2s;
+    border-radius: 5px;
+    max-width: calc(100vw - 50px);
+    box-shadow: 0px 0px 2px black;
+  }
+  .project:hover .mainImage {
+    width: 490px;
+    transition: 0.2s;
+  }
