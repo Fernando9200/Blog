@@ -4,6 +4,7 @@ import { Toolbar } from '/components/toolbar';
 import imageUrlBuilder from '@sanity/image-url';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { Footer } from '/components/footer';
 
 export default function Projects({ projects }) {
   const router = useRouter();
@@ -46,6 +47,7 @@ export default function Projects({ projects }) {
           )) : <>No Posts Yet</>}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

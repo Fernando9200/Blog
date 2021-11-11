@@ -4,6 +4,8 @@ import { Toolbar } from '/components/toolbar';
 import imageUrlBuilder from '@sanity/image-url';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { Footer } from '/components/footer';
+
 
 export default function Academic({ academics }) {
   const router = useRouter();
@@ -46,6 +48,7 @@ export default function Academic({ academics }) {
           )) : <>No Posts Yet</>}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

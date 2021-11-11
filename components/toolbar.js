@@ -10,8 +10,6 @@ export const Toolbar = () => {
             <div onClick={() => router.push('/academic')}>Formação</div>
             <div onClick={() => router.push('/projects')}>Projetos</div>
             <div onClick={() => router.push('/contact')}>Contact</div>
-            <div onClick={() => window.location.href = 'https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoicHQifQ%3D%3D%22%7D'}>Twitter</div>
-            <div onClick={() => window.location.href = 'https://github.com/'}>GitHub</div>
         </div>
     );
 };
