@@ -36,7 +36,6 @@ export default function Home({ posts }) {
       <div className={styles.main}>
         <h1>Welcome to my blog</h1>
 
-        <h3>Recent posts: </h3>
 
         <div className={styles.feed}>
           {mappedPosts.length ? mappedPosts.map((p, index) => (
@@ -47,7 +46,7 @@ export default function Home({ posts }) {
           )) : <>No Posts Yet</>}
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

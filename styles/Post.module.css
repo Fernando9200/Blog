@@ -6,10 +6,15 @@
 .mainImage {
     width: 100%;
 }
+
 .body p {
     font-size: 24px;
     text-indent: 50px;
     line-height: 45px;
     text-align: justify;
     letter-spacing: 1.5px;
+}
+
+.title {
+    text-align: center;
 }

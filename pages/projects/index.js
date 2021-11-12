@@ -36,8 +36,6 @@ export default function Projects({ projects }) {
       <div className={styles.main}>
         <h1>Welcome to my blog</h1>
 
-        <h3>Recent posts: </h3>
-
         <div className={styles.feed}>
           {mappedProjects.length ? mappedProjects.map((p, index) => (
             <div onClick={() => router.push(`/projects/${p.slug.current}`)} key={index} className={styles.project}>
@@ -47,7 +45,7 @@ export default function Projects({ projects }) {
           )) : <>No Posts Yet</>}
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

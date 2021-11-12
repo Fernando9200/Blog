@@ -37,8 +37,6 @@ export default function Academic({ academics }) {
       <div className={styles.main}>
         <h1>Welcome to my blog</h1>
 
-        <h3>Recent posts: </h3>
-
         <div className={styles.feed}>
           {mappedAcademics.length ? mappedAcademics.map((p, index) => (
             <div onClick={() => router.push(`/academic/${p.slug.current}`)} key={index} className={styles.academic}>
@@ -48,7 +46,7 @@ export default function Academic({ academics }) {
           )) : <>No Posts Yet</>}
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

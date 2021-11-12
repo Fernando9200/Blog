@@ -9,8 +9,8 @@
   } */
 
   .main {
-    margin: auto;
-    width: 750px;
+    margin: bottom;
+    width: auto;
     display: flex;
     max-width: 100%;
     color: #d7d7d7;

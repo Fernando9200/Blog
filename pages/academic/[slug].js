@@ -21,7 +21,9 @@ export const Academic = ({ title, body, image }) => {
         <div>
             <Toolbar />
             <div className={styles.main}>
+                <div className={styles.title}>
                 <h1>{title}</h1>
+                </div>
         {imageUrl && <img className={styles.mainImage} src={imageUrl} />}
 
         <div className={styles.body}>
