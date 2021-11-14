@@ -6,19 +6,19 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { Footer } from '/components/footer';
 
-export default function Contact({ contacts }) {
+export default function Aboutme({ aboutmes }) {
     const router = useRouter();
-    const [mappedContacts, setMappedContacts] = useState([]);
+    const [mappedAboutmes, setMappedAboutmes] = useState([]);
   
     useEffect(() => {
-      if (contacts.length) {
+      if (aboutmes.length) {
         const imgBuilder = imageUrlBuilder({
           projectId: 'b547fsql',
           dataset: 'production',
       });
       
-      setMappedContacts(
-        contacts.map(p => {
+      setMappedAboutmes(
+        aboutmes.map(p => {
           return {
             ...p,
             mainImage: imgBuilder.image(p.mainImage).width(500).height(250),
@@ -26,9 +26,9 @@ export default function Contact({ contacts }) {
         })
       );
     } else {
-        setMappedContacts([]);
+        setMappedAboutmes([]);
       }
-    }, [contacts]);
+    }, [aboutmes]);
   
     return (
       <div>
@@ -38,8 +38,8 @@ export default function Contact({ contacts }) {
   
   
           <div className={styles.feed}>
-            {mappedContacts.length ? mappedContacts.map((p, index) => (
-              <div onClick={() => router.push(`/contact/${p.slug.current}`)} key={index} className={styles.contact}>
+            {mappedAboutmes.length ? mappedAboutmes.map((p, index) => (
+              <div onClick={() => router.push(`/aboutme/${p.slug.current}`)} key={index} className={styles.aboutme}>
                 <h3>{p.title}</h3>
                 <img className={styles.mainImage} src={p.mainImage}/>
               </div>
@@ -52,20 +52,20 @@ export default function Contact({ contacts }) {
   }
   
   export const getServerSideProps = async pageContext => {
-    const query = encodeURIComponent('*[ _type == "contact" ]');
+    const query = encodeURIComponent('*[ _type == "aboutme" ]');
     const url = `https://b547fsql.api.sanity.io/v1/data/query/production?query=${query}`;
     const result = await fetch(url).then(res => res.json());
   
     if (!result.result || !result.result.length) {
       return {
         props: {
-          contacts: [],
+          aboutmes: [],
         }
       }
     } else {
       return {
         props: {
-          contacts: result.result,
+          aboutmes: result.result,
         }
       }
     }

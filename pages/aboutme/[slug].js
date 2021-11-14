@@ -5,7 +5,7 @@ import BlockContent from '@sanity/block-content-to-react';
 import { Toolbar } from '../../components/toolbar';
 import { Footer } from '../../components/footer';
 
-export const Contact = ({ title, body, image }) => {
+export const Aboutme = ({ title, body, image }) => {
     const [imageUrl, setImageUrl] = useState('');
 
     useEffect(() => {
@@ -44,25 +44,25 @@ export const getServerSideProps = async pageContext => {
         }
         
     }
-    const query = encodeURIComponent(`*[ _type == "contact" && slug.current == "${pageSlug}" ]`);
+    const query = encodeURIComponent(`*[ _type == "aboutme" && slug.current == "${pageSlug}" ]`);
     const url = `https://b547fsql.api.sanity.io/v1/data/query/production?query=${query}`;
 
     const result = await fetch(url).then(res => res.json());
-    const contact = result.result[0];
+    const aboutme = result.result[0];
 
-    if (!contact) {
+    if (!aboutme) {
         return {
             notFound: true
         }
     } else {
         return {
             props: {
-                body: contact.body,
-                title: contact.title,
-                image: contact.mainImage,
+                body: aboutme.body,
+                title: aboutme.title,
+                image: aboutme.mainImage,
             }
         }
     }
 };
 
-export default Contact;
+export default Aboutme;

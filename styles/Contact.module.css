@@ -6,7 +6,7 @@
     align-items: center;
     flex-direction: column;
   }
-  .contact {
+  .aboutme {
     margin: 25px;
     width: 500px;
     height: 316px;
@@ -21,7 +21,7 @@
     max-width: calc(100vw - 50px);
     box-shadow: 0px 0px 2px black;
   }
-  .contact:hover .mainImage {
+  .aboutme:hover .mainImage {
     width: 490px;
     transition: 0.2s;
   }
