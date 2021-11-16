@@ -35,7 +35,7 @@ export default function Academic({ academics }) {
     <div>
       <Toolbar />
       <div className={styles.main}>
-        <h1>Welcome to my blog</h1>
+        <h1>Bem-vindo ao meu blog</h1>
 
         <div className={styles.feed}>
           {mappedAcademics.length ? mappedAcademics.map((p, index) => (

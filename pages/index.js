@@ -34,7 +34,7 @@ export default function Home({ posts }) {
     <div>
       <Toolbar />
       <div className={styles.main}>
-        <h1>Welcome to my blog</h1>
+        <h1>Bem-vindo ao meu blog</h1>
 
 
         <div className={styles.feed}>
